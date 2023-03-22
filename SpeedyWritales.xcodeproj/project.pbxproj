@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B92DB10929CB07E000E18898 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92DB10829CB07E000E18898 /* GameOverViewController.swift */; };
 		B92F98BC29C9B74D008670D0 /* WordlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92F98BB29C9B74D008670D0 /* WordlList.swift */; };
 		B937E5B029C839A400C53767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5AF29C839A400C53767 /* AppDelegate.swift */; };
 		B937E5B229C839A400C53767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5B129C839A400C53767 /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B92DB10829CB07E000E18898 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		B92F98BB29C9B74D008670D0 /* WordlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordlList.swift; sourceTree = "<group>"; };
 		B937E5AC29C839A400C53767 /* SpeedyWritales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedyWritales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B937E5AF29C839A400C53767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				B937E5B329C839A400C53767 /* ViewController.swift */,
 				B937E5DF29C8624900C53767 /* GameViewController.swift */,
+				B92DB10829CB07E000E18898 /* GameOverViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				B937E5E529C8A23C00C53767 /* WordsClass.swift in Sources */,
 				B92F98BC29C9B74D008670D0 /* WordlList.swift in Sources */,
 				B937E5B429C839A400C53767 /* ViewController.swift in Sources */,
+				B92DB10929CB07E000E18898 /* GameOverViewController.swift in Sources */,
 				B937E5B029C839A400C53767 /* AppDelegate.swift in Sources */,
 				B937E5B229C839A400C53767 /* SceneDelegate.swift in Sources */,
 			);

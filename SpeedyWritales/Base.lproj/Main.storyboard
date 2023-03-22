@@ -37,7 +37,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Yo4-Ra-Vv2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="278" id="0mJ-H6-miS"/>
                             <constraint firstItem="b0I-Ew-Fsr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WuJ-Z1-ebE"/>
@@ -105,11 +105,55 @@
                     <connections>
                         <outlet property="inputText" destination="xub-Uw-hWy" id="JWy-7q-eV9"/>
                         <outlet property="shownWord" destination="ozZ-vm-BLu" id="T1k-To-fGH"/>
+                        <outlet property="timerLabel" destination="zjg-a0-eHf" id="Uo0-iq-dl2"/>
+                        <segue destination="AaY-u1-60B" kind="show" identifier="gameOver" id="JFD-BT-DKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5v-Us-kay" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="800.76335877862596" y="-27.464788732394368"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="6lG-iS-CCq">
+            <objects>
+                <viewController id="AaY-u1-60B" customClass="GameOverViewController" customModule="SpeedyWritales" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0PX-j3-CFh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUu-u1-0hO">
+                                <rect key="frame" x="25.666666666666657" y="163" width="342" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="342" id="Fil-8T-603"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-07-vey">
+                                <rect key="frame" x="74" y="323" width="245" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="wQ8-wT-jJI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H5H-OG-SK0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aNJ-07-vey" firstAttribute="top" secondItem="dUu-u1-0hO" secondAttribute="bottom" constant="137" id="0mX-30-WTg"/>
+                            <constraint firstItem="dUu-u1-0hO" firstAttribute="top" secondItem="H5H-OG-SK0" secondAttribute="top" constant="104" id="JZj-0e-Ptg"/>
+                            <constraint firstItem="dUu-u1-0hO" firstAttribute="centerX" secondItem="0PX-j3-CFh" secondAttribute="centerX" id="O6N-Bf-4mV"/>
+                            <constraint firstItem="aNJ-07-vey" firstAttribute="centerX" secondItem="0PX-j3-CFh" secondAttribute="centerX" id="e0l-bQ-eCs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QNB-rR-lnn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1xs-V2-80g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473" y="-27"/>
         </scene>
     </scenes>
     <resources>
