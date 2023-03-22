@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B92F98BC29C9B74D008670D0 /* WordlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92F98BB29C9B74D008670D0 /* WordlList.swift */; };
 		B937E5B029C839A400C53767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5AF29C839A400C53767 /* AppDelegate.swift */; };
 		B937E5B229C839A400C53767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5B129C839A400C53767 /* SceneDelegate.swift */; };
 		B937E5B429C839A400C53767 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5B329C839A400C53767 /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 		B937E5C729C839A500C53767 /* SpeedyWritalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5C629C839A500C53767 /* SpeedyWritalesTests.swift */; };
 		B937E5D129C839A500C53767 /* SpeedyWritalesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5D029C839A500C53767 /* SpeedyWritalesUITests.swift */; };
 		B937E5D329C839A500C53767 /* SpeedyWritalesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5D229C839A500C53767 /* SpeedyWritalesUITestsLaunchTests.swift */; };
+		B937E5E029C8624900C53767 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5DF29C8624900C53767 /* GameViewController.swift */; };
+		B937E5E529C8A23C00C53767 /* WordsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B937E5E429C8A23C00C53767 /* WordsClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B92F98BB29C9B74D008670D0 /* WordlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordlList.swift; sourceTree = "<group>"; };
 		B937E5AC29C839A400C53767 /* SpeedyWritales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedyWritales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B937E5AF29C839A400C53767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B937E5B129C839A400C53767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		B937E5CC29C839A500C53767 /* SpeedyWritalesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedyWritalesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B937E5D029C839A500C53767 /* SpeedyWritalesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedyWritalesUITests.swift; sourceTree = "<group>"; };
 		B937E5D229C839A500C53767 /* SpeedyWritalesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedyWritalesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B937E5DF29C8624900C53767 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B937E5E429C8A23C00C53767 /* WordsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,10 @@
 		B937E5AE29C839A400C53767 /* SpeedyWritales */ = {
 			isa = PBXGroup;
 			children = (
+				B937E5E329C8A1E500C53767 /* Model */,
+				B937E5E229C8A1A200C53767 /* ViewControllers */,
 				B937E5AF29C839A400C53767 /* AppDelegate.swift */,
 				B937E5B129C839A400C53767 /* SceneDelegate.swift */,
-				B937E5B329C839A400C53767 /* ViewController.swift */,
 				B937E5B529C839A400C53767 /* Main.storyboard */,
 				B937E5B829C839A500C53767 /* Assets.xcassets */,
 				B937E5BA29C839A500C53767 /* LaunchScreen.storyboard */,
@@ -125,6 +132,24 @@
 				B937E5D229C839A500C53767 /* SpeedyWritalesUITestsLaunchTests.swift */,
 			);
 			path = SpeedyWritalesUITests;
+			sourceTree = "<group>";
+		};
+		B937E5E229C8A1A200C53767 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B937E5B329C839A400C53767 /* ViewController.swift */,
+				B937E5DF29C8624900C53767 /* GameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B937E5E329C8A1E500C53767 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B937E5E429C8A23C00C53767 /* WordsClass.swift */,
+				B92F98BB29C9B74D008670D0 /* WordlList.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +283,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B937E5E029C8624900C53767 /* GameViewController.swift in Sources */,
+				B937E5E529C8A23C00C53767 /* WordsClass.swift in Sources */,
+				B92F98BC29C9B74D008670D0 /* WordlList.swift in Sources */,
 				B937E5B429C839A400C53767 /* ViewController.swift in Sources */,
 				B937E5B029C839A400C53767 /* AppDelegate.swift in Sources */,
 				B937E5B229C839A400C53767 /* SceneDelegate.swift in Sources */,
