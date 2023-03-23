@@ -10,7 +10,7 @@ import UIKit
 class GameViewController: UIViewController {
     let segueIdGameOver = "gameOver"
     
-    var difficulty : String = "medium"
+    var difficulty : String = "hard"
     
     @IBOutlet weak var shownWord: UILabel!
     
@@ -49,7 +49,7 @@ class GameViewController: UIViewController {
     }
     
     func setNewWord (){
-        randomWord = wordlist.getRandomWord()
+        randomWord = wordlist.getWordbyDifficulty(difficulty: difficulty)
         shownWord.text = randomWord?.word
         inputText.text = ""
         

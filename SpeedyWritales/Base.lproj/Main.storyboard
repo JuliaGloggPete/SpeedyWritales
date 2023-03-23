@@ -35,14 +35,25 @@
                                     <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yyO-o2-np9"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VO-5l-OmH">
+                                <rect key="frame" x="0.0" y="97" width="393" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="E9c-mJ-9eU"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9Bh-Rf-3Ch"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Yo4-Ra-Vv2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="278" id="0mJ-H6-miS"/>
+                            <constraint firstItem="6VO-5l-OmH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="71E-11-fGZ"/>
+                            <constraint firstItem="Yo4-Ra-Vv2" firstAttribute="top" secondItem="6VO-5l-OmH" secondAttribute="bottom" constant="24" id="IdR-aO-pLr"/>
+                            <constraint firstItem="6VO-5l-OmH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Wid-dv-R4O"/>
                             <constraint firstItem="b0I-Ew-Fsr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WuJ-Z1-ebE"/>
                             <constraint firstItem="Yo4-Ra-Vv2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jKM-Hg-fcC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b0I-Ew-Fsr" secondAttribute="bottom" constant="54" id="m6p-V5-AYr"/>
+                            <constraint firstItem="6VO-5l-OmH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="yp9-7q-A4S"/>
                         </constraints>
                     </view>
                     <connections>
@@ -90,11 +101,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2P-jw-eUd">
+                                <rect key="frame" x="125.66666666666669" y="616" width="142" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="142" id="bbP-68-iXr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CHA-zp-f3j"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
+                            <constraint firstItem="R2P-jw-eUd" firstAttribute="centerX" secondItem="gwm-3a-PVg" secondAttribute="centerX" id="1Cq-cZ-7PY"/>
                             <constraint firstItem="zjg-a0-eHf" firstAttribute="centerX" secondItem="gwm-3a-PVg" secondAttribute="centerX" id="BmQ-90-2Wd"/>
+                            <constraint firstItem="R2P-jw-eUd" firstAttribute="top" secondItem="xub-Uw-hWy" secondAttribute="bottom" constant="139" id="KTq-fh-phh"/>
                             <constraint firstItem="xub-Uw-hWy" firstAttribute="centerX" secondItem="gwm-3a-PVg" secondAttribute="centerX" id="Npv-5c-pGD"/>
                             <constraint firstItem="ozZ-vm-BLu" firstAttribute="top" secondItem="zjg-a0-eHf" secondAttribute="bottom" constant="152" id="Rps-0Q-30h"/>
                             <constraint firstItem="zjg-a0-eHf" firstAttribute="top" secondItem="CHA-zp-f3j" secondAttribute="top" constant="118" id="Yqb-3s-m90"/>
