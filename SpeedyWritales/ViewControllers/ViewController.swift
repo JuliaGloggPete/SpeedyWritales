@@ -10,10 +10,10 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
   
 
-    
 
     var difficultValues = [String]()
     var choosenDifficulty : String = "easy"
+
 
     @IBOutlet weak var HighScoreView: UIScrollView!
     

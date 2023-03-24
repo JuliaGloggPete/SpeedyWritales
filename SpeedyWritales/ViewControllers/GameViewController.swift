@@ -11,7 +11,9 @@ class GameViewController: UIViewController {
     let segueIdGameOver = "gameOver"
     
     var difficulty : String = "hard"
+    var points : Int = 0
     
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var shownWord: UILabel!
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -29,6 +31,7 @@ class GameViewController: UIViewController {
         setNewWord()
         timerLabel.text = formatTime(countdownSeconds)
         startTimer()
+   
  
         // så länge en timer pågår så länge ska det funkar
         
@@ -59,6 +62,8 @@ class GameViewController: UIViewController {
         guard let randomWord = randomWord else { return }
         if inputText.text == randomWord.word {
             setNewWord()
+            points += 1
+            scoreLabel.text = "Score: \(points)"
         }
     }
     
@@ -89,6 +94,16 @@ class GameViewController: UIViewController {
         return String(format: "%02d:%02d", minutes, remainingSeconds)
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+        if let gameOverViewController = segue.destination as? GameOverViewController{
+            
+            gameOverViewController.difficultyPlayed = difficulty
+            gameOverViewController.scoredPoints = points
+                   
+        }
+    }
     /*
     // MARK: - Navigation
 
