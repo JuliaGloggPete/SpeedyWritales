@@ -29,7 +29,7 @@ class WordList {
      
      }*/
     init() {
-        let wordStrings = ["apple", "banana", "grape", "yogurt", "algorithm", "chandelier", "pneumonia", "saxophone", "fascinating","pie","cake","fake","random","code","impressionism","expressionism","restaurant","ok","fine","post","office","women","woman","man","child","room","floor","cookie","fresh","value","multiple","contain", "compound","case","within","switch","unknown","sand","mister","speed"]
+        let wordStrings = ["apple", "banana", "grape", "yogurt", "algorithm", "chandelier", "pneumonia", "saxophone", "fascinating","pie","cake","fake","random","code","impressionism","expressionism","restaurant","ok","fine","post","office","women","woman","man","child","room","floor","cookie","fresh","value","multiple","contain", "compound","case","within","switch","unknown","sand","mister","speed","hamburger","onion","opinion","we","nice","superman","batman","spiderman","five","finger","death","punch","comic","mouse","house","spouse","white","black","white","grey","blue","dad","dread","sad"]
         words = wordStrings.map { Words(word: $0) }
     }
     

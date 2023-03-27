@@ -7,15 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-  
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var highscoreTableView: UITableView!
+    
+    
 
     var difficultValues = [String]()
     var choosenDifficulty : String = "easy"
+    var highScores = [String]()
 
-
-    @IBOutlet weak var HighScoreView: UIScrollView!
+  //  @IBOutlet weak var HighScoreView: UIScrollView!
     
     
     let segueIdStartGame = "startGame"
@@ -27,9 +29,35 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         difficultValues.append("easy")
         difficultValues.append("medium")
         difficultValues.append("hard")
-  
         
+        highscoreTableView.dataSource = self
+        highscoreTableView.delegate = self
+        highscoreTableView.register(UITableViewCell.self, forCellReuseIdentifier: "HighscoreCell")
+        
+      /*  if let highScores = UserDefaults.standard.object(forKey: "Highscore") as?
+            [String] {
+                   print("High scores:")
+                   for score in highScores {
+                       print(score)
+                   }
+               }*/
+        
+        if let scores = UserDefaults.standard.array(forKey: "Highscore") as? [String] {
+             highScores = scores
+         }
+         
+       
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return highScores.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HighscoreCell", for: indexPath)
+        cell.textLabel?.text = highScores[indexPath.row]
+        return cell
+    }
+
     
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -48,6 +76,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
         choosenDifficulty = difficultValues[row]
         print(choosenDifficulty)
+        
     }
 
     

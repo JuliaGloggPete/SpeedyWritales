@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     var difficulty : String = "hard"
     var points : Int = 0
     
+
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var shownWord: UILabel!
     
@@ -31,6 +32,7 @@ class GameViewController: UIViewController {
         setNewWord()
         timerLabel.text = formatTime(countdownSeconds)
         startTimer()
+        scoreLabel.text = "Score: \(points)"
    
  
         // så länge en timer pågår så länge ska det funkar
@@ -41,6 +43,11 @@ class GameViewController: UIViewController {
         
     }
     
+    @IBAction func skipWord(_ sender: UIButton) {
+        points -= 1
+        setNewWord()
+        scoreLabel.text = "Score: \(points)"
+    }
     
     func compareWords(givenWord : String, typedWord: String){
         
