@@ -26,7 +26,7 @@ class GameOverViewController: UIViewController {
         
      
         
-        if let value = defaults.value(forKey: "Highscore") as? String {
+        if let value = defaults.value(forKey: "MyHighscore") as? String {
             
             
             highScoreLabel.text =  value
@@ -38,20 +38,20 @@ class GameOverViewController: UIViewController {
     @IBAction func SaveToHighscore(_ sender: UIButton) {
         playerName = nameTextField.text ?? ""
         
-       let newScore = "\(playerName) Score \(scoredPoints) in set \(difficultyPlayed)"
+       let newScore = "\(scoredPoints)points ...\(playerName) in setting \(difficultyPlayed)"
         
 
-        if var highscore = defaults.object(forKey: "Highscore") as? [String] {
-            
-            highscore.append(newScore)
-            defaults.set(highscore, forKey: "Highscore")
-            
-            print(highscore)
-            
+        if var highscore = defaults.object(forKey: "MyHighscore") as? [String] {
+            if !highscore.contains(newScore) {
+                highscore.append(newScore)
+                defaults.set(highscore, forKey: "MyHighscore")
+                
+                print(highscore)
+            }
             //defaults.set("\(playerName) Score \(scoredPoints) in set \(difficultyPlayed)", forKey: "Highscore")
         } else {
             
-            defaults.set([newScore], forKey: "Highscore")
+            defaults.set([newScore], forKey: "MyHighscore")
             print(newScore)
             
             

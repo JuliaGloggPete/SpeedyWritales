@@ -42,9 +42,32 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                    }
                }*/
         
-        if let scores = UserDefaults.standard.array(forKey: "Highscore") as? [String] {
+     /*   if let scores = UserDefaults.standard.array(forKey: "MyHighscore") as? [String] {
+
+            
              highScores = scores
-         }
+         }*/
+        
+        
+        if let scores = UserDefaults.standard.array(forKey: "MyHighscore") as? [String] {
+            let sortedScores = scores.sorted(by: { score1, score2 in
+                let scoreComponents1 = score1.split(separator: "points")
+                let scoreComponents2 = score2.split(separator: "points")
+                guard let scoreString1 = scoreComponents1.first, let scoreString2 = scoreComponents2.first else {
+                    return false // if any score string is invalid, don't sort
+                }
+                guard let score1 = Int(scoreString1), let score2 = Int(scoreString2) else {
+                    return false // if any score string can't be converted to an integer, don't sort
+                }
+                return score1 > score2 // sort in descending order
+            })
+            highScores = sortedScores
+        }
+
+        
+        
+        
+        
          
        
     }
@@ -98,8 +121,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             
         }
     }
-
+  
+    @IBAction func unwindToStard(segue: UIStoryboardSegue )
     
+    { //highscoreTableView.reloadData()
+    
+    }
     
     
 }
