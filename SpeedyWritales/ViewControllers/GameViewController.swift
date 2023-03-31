@@ -13,7 +13,7 @@ class GameViewController: UIViewController {
     var difficulty : String = "hard"
     var points : Int = 0
     
-
+    
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var shownWord: UILabel!
     
@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var inputText: UITextField!
     
-    var countdownSeconds = 60
+    var countdownSeconds = 10
     var wordlist = WordList()
     var randomWord: Words?
     var timer: Timer?
@@ -33,12 +33,8 @@ class GameViewController: UIViewController {
         timerLabel.text = formatTime(countdownSeconds)
         startTimer()
         scoreLabel.text = "Score: \(points)"
-   
- 
-        // så länge en timer pågår så länge ska det funkar
         
-       // compareWords(givenWord: shownWord.text ?? "nonono", typedWord: inputText.text ?? "")
-    
+        
         inputText.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         
     }
@@ -55,7 +51,7 @@ class GameViewController: UIViewController {
             setNewWord()
             
         }
-
+        
     }
     
     func setNewWord (){
@@ -80,7 +76,7 @@ class GameViewController: UIViewController {
         countdownSeconds -= 1
         
         timerLabel.text = formatTime(countdownSeconds)
-
+        
         
         if countdownSeconds == 0 {
             // Stop the timer when the countdown reaches 0
@@ -100,25 +96,25 @@ class GameViewController: UIViewController {
         let remainingSeconds = seconds % 60
         return String(format: "%02d:%02d", minutes, remainingSeconds)
     }
-
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+        
         if let gameOverViewController = segue.destination as? GameOverViewController{
             
             gameOverViewController.difficultyPlayed = difficulty
             gameOverViewController.scoredPoints = points
-                   
+            
         }
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

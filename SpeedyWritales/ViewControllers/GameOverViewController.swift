@@ -24,7 +24,7 @@ class GameOverViewController: UIViewController {
         
         yourScoreLabel.text = "Score: \(scoredPoints) in setting \(difficultyPlayed)"
         
-     
+        
         
         if let value = defaults.value(forKey: "MyHighscore") as? String {
             
@@ -38,9 +38,9 @@ class GameOverViewController: UIViewController {
     @IBAction func SaveToHighscore(_ sender: UIButton) {
         playerName = nameTextField.text ?? ""
         
-       let newScore = "\(scoredPoints)points ...\(playerName) in setting \(difficultyPlayed)"
+        let newScore = "\(scoredPoints)points ...\(playerName) in setting \(difficultyPlayed)"
         
-
+        
         if var highscore = defaults.object(forKey: "MyHighscore") as? [String] {
             if !highscore.contains(newScore) {
                 highscore.append(newScore)
@@ -56,18 +56,18 @@ class GameOverViewController: UIViewController {
             
             
         }
-      
+        
         
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

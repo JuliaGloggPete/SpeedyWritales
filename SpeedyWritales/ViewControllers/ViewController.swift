@@ -8,24 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var highscoreTableView: UITableView!
     
     
-
+    
     var difficultValues = [String]()
     var choosenDifficulty : String = "easy"
     var highScores = [String]()
-
-  //  @IBOutlet weak var HighScoreView: UIScrollView!
+    
+    //  @IBOutlet weak var HighScoreView: UIScrollView!
     
     
     let segueIdStartGame = "startGame"
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.highscoreTableView.layer.cornerRadius = 10.0
         // Do any additional setup after loading the view.
         
-     //val för svårighet
+        //val för svårighet
         difficultValues.append("easy")
         difficultValues.append("medium")
         difficultValues.append("hard")
@@ -34,21 +35,32 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         highscoreTableView.delegate = self
         highscoreTableView.register(UITableViewCell.self, forCellReuseIdentifier: "HighscoreCell")
         
-      /*  if let highScores = UserDefaults.standard.object(forKey: "Highscore") as?
-            [String] {
-                   print("High scores:")
-                   for score in highScores {
-                       print(score)
-                   }
-               }*/
-        
-     /*   if let scores = UserDefaults.standard.array(forKey: "MyHighscore") as? [String] {
-
-            
-             highScores = scores
-         }*/
+        loadHighScores()
         
         
+        
+        
+        
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return highScores.count
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadHighScores()
+        highscoreTableView.reloadData()
+        // om func inte körs så kolla - 
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HighscoreCell", for: indexPath)
+        cell.textLabel?.text = highScores[indexPath.row]
+        return cell
+    }
+    
+    
+    func loadHighScores() {
         if let scores = UserDefaults.standard.array(forKey: "MyHighscore") as? [String] {
             let sortedScores = scores.sorted(by: { score1, score2 in
                 let scoreComponents1 = score1.split(separator: "points")
@@ -62,29 +74,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 return score1 > score2 // sort in descending order
             })
             highScores = sortedScores
-        }
-
-        
-        
-        
-        
-         
-       
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return highScores.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HighscoreCell", for: indexPath)
-        cell.textLabel?.text = highScores[indexPath.row]
-        return cell
-    }
-
+        }}
     
-
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-       return 1
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -92,18 +87,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       return difficultValues[row]
+        return difficultValues[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
+        
         choosenDifficulty = difficultValues[row]
         print(choosenDifficulty)
         
     }
-
     
-
+    
+    
     @IBAction func startButton(_ sender: UIButton) {
         
         performSegue(withIdentifier: segueIdStartGame, sender: self)
@@ -115,17 +110,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+        
         if let gameViewController = segue.destination as? GameViewController{
-          gameViewController.difficulty = choosenDifficulty
+            gameViewController.difficulty = choosenDifficulty
             
         }
     }
-  
+    
     @IBAction func unwindToStard(segue: UIStoryboardSegue )
     
     { //highscoreTableView.reloadData()
-    
+        
     }
     
     
