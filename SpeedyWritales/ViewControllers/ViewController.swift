@@ -119,7 +119,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func unwindToStard(segue: UIStoryboardSegue )
     
-    { //highscoreTableView.reloadData()
+    { 
         
     }
     

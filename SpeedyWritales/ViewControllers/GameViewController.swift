@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var inputText: UITextField!
     
-    var countdownSeconds = 10
+    var countdownSeconds = 60
     var wordlist = WordList()
     var randomWord: Words?
     var timer: Timer?
